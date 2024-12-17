@@ -1,50 +1,98 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Survey Form</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form><
-   <center> <h1>SUVERY FORM</h1></center>
-   <h2> who are you</h2>
-   <label class="texxt">*NAME:</label> 
-   <input type="name " id="name" placeholder="enter your Name"><br><br>
-   <br>
-   <label class="text">*EMAIL:</label> 
-   <input type="email " id="name" placeholder="enter your Email"><br><br>
-   <br>
-   <label class="text">*AGE:</label> 
-   <input type="age" id="name" placeholder="enter your Age"><br>
-   <label for="Gender">* Gender</label>
-   <select class="Gender" id="Gender">
-    <option value="male">male</option>
-    <option value="female">female</option>
-    <option value="others">others</option>
-   </select>
-   <br>
+  <header>
+    <h1 id="title">Customer Satisfaction Survey</h1>
+    <p id="description">We value your feedback! Please take a moment to fill out our survey form below.</p>
+  </header>
 
-   <label for="radio">
-    programming <br>
-    Approach:
-   </label>
-<input type="radio" id="Front-End" name="developers" value="Front-End">
-<label for="Front-End">Front-End</label><br>
-<input type="radio" id="Back-End" name="developers" value="Back-End">
-<label for="Back-End">Back-End</label><br>
-<input type="radio" id="Full-stack" name="developers" value="Full-stack">
-<label for="Full-stack">Full-stack</label><br>
-<!-- <fieldset></fieldset> -->
-<label fir="checkbox">your favourite <br>
-    programming <br>
-    language:</label><input type="checkbox" id="language" name="c/c++">c/c++<br>
-    <input type="checkbox" id="language" name="java">java<br>
-    <input type="checkbox" id="language" name="python">javascript<br>
-    <input type="checkbox" id="language" name="html">html
-</form>
+  <main>
+    <form id="survey-form">
+      <!-- Name Field -->
+      <div class="form-group">
+        <label id="name-label" for="name">Name:</label>
+        <input 
+          type="text" 
+          id="name" 
+          name="name" 
+          placeholder="Enter your name" 
+          required>
+      </div>
+
+      <!-- Email Field -->
+      <div class="form-group">
+        <label id="email-label" for="email">Email:</label>
+        <input 
+          type="email" 
+          id="email" 
+          name="email" 
+          placeholder="Enter your email" 
+          required>
+      </div>
+
+      <!-- Number Field -->
+      <div class="form-group">
+        <label id="number-label" for="number">Age (10 to 100):</label>
+        <input 
+          type="number" 
+          id="number" 
+          name="age" 
+          placeholder="Enter your age" 
+          min="10" 
+          max="100" 
+          required>
+      </div>
+
+      <!-- Dropdown Field -->
+      <div class="form-group">
+        <label for="dropdown">How did you hear about us?</label>
+        <select id="dropdown" name="source" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="social-media">Social Media</option>
+          <option value="friend">Friend</option>
+          <option value="advertisement">Advertisement</option>
+        </select>
+      </div>
+
+      <!-- Radio Buttons -->
+      <div class="form-group">
+        <p>How satisfied are you with our service?</p>
+        <label><input type="radio" name="satisfaction" value="very-satisfied" required> Very Satisfied</label>
+        <label><input type="radio" name="satisfaction" value="satisfied"> Satisfied</label>
+        <label><input type="radio" name="satisfaction" value="neutral"> Neutral</label>
+        <label><input type="radio" name="satisfaction" value="dissatisfied"> Dissatisfied</label>
+      </div>
+
+      <!-- Checkboxes -->
+      <div class="form-group">
+        <p>What features do you like about us? (Select all that apply)</p>
+        <label><input type="checkbox" name="features" value="customer-service"> Customer Service</label>
+        <label><input type="checkbox" name="features" value="pricing"> Affordable Pricing</label>
+        <label><input type="checkbox" name="features" value="quality"> Quality Products</label>
+        <label><input type="checkbox" name="features" value="delivery"> Fast Delivery</label>
+      </div>
+
+      <!-- Textarea -->
+      <div class="form-group">
+        <label for="comments">Additional Comments:</label>
+        <textarea 
+          id="comments" 
+          name="comments" 
+          rows="4" 
+          placeholder="Write your comments here..."></textarea>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="form-group">
+        <button id="submit" type="submit">Submit</button>
+      </div>
+    </form>
+  </main>
 </body>
 </html>
